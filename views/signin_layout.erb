@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>CMS Project</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/cms.css">
+  </head>
+  <body>
+    <header>
+      <h1>CMS Project</h1>
+    </header>
+    <% if session[:error] %>
+      <div>
+        <p class="message"><%= session.delete(:error) %></p>
+    <% elsif session[:success] %>
+        <p class="message"><%= session.delete(:success) %></p>
+    <% end %>
+      </div>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>  
